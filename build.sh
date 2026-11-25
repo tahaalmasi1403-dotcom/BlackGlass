@@ -47,6 +47,7 @@ dx --dex --output="$BUILD/classes.dex" "$OBJ"
 echo "=== Step 5: Package APK ==="
 cp "$APK_DIR/app-unaligned.apk" "$APK_DIR/app.apk"
 cd "$BUILD" && zip -j "$APK_DIR/app.apk" classes.dex
+cd "$PROJECT" && zip -r "$APK_DIR/app.apk" assets
 cd "$PROJECT"
 
 echo "=== Step 6: Sign ==="
